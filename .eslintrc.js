@@ -15,7 +15,7 @@ module.exports = {
       },
     },
   ],
-  ignorePatterns: ["dist", ".eslintrc.js", "*.test.js", "*.config.js"],
+  ignorePatterns: ["dist", ".eslintrc.js", "*.test.js", "*.config.js", "build"],
   settings: { react: { version: "18.2" } },
   parserOptions: {
     ecmaVersion: "latest",

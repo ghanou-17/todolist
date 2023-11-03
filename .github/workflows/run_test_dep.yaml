@@ -31,16 +31,19 @@ jobs:
         run: npm run build
 
       - name: Upload artifact
-
+        # https://github.com/actions/upload-artifact
         uses: actions/upload-artifact@v2
         with:
+          # the name to save the compressed asset as
           name: build-artifact
-
-          path: dist
-
+          # the directory or file to upload. adapt to your needs
+          path: build
+          # the artifact is only needed for the duration of the build-deploy workflow
+          # adapt to your needs
+          # https://github.com/actions/upload-artifact#retention-period
           retention-days: 1
 
-deploy:
+  deploy:
     needs: build-and-test
     environment:
       name: github-pages
